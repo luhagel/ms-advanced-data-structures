@@ -1,0 +1,14 @@
+{
+  "name": "ms-advanced-data-structures",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": "*.git",
+  "author": "Luca Hagel",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^19.0.2"
+  }
+}
