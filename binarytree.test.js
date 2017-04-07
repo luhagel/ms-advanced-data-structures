@@ -31,3 +31,38 @@ describe('Binary Node', () => {
     expect(leaf.isInternal()).toBe(false)
   })
 })
+
+describe('Binary Search Tree', () => {
+  it('properly intializes', () => {
+    var tree = new BinaryTree('heya')
+
+    expect(tree.root.data).toBe('heya')
+  })
+
+  it('checks for isEmpty', () => {
+    var emptyTree = new BinaryTree(null)
+    var nonEmptyTree = new BinaryTree('heya')
+
+    expect(emptyTree.isEmpty()).toBe(true)
+    expect(nonEmptyTree.isEmpty()).toBe(false)
+  })
+
+  it('properly inserts', () => {
+    var tree = new BinaryTree(3)
+    tree.insert(2)
+
+    expect(tree.root.left.data).toBe(2)
+  })
+
+  it('searches for and finds an element', () => {
+    var tree = new BinaryTree(5)
+    tree.insert(4)
+    tree.insert(1)
+    tree.insert(3)
+
+    expect(tree.search(3)).toBe(true)
+    expect(tree.search(5)).toBe(true)
+
+    expect(tree.search(8)).toBe(false)
+  })
+})
