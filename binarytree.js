@@ -42,6 +42,26 @@ class BinarySearchTree {
     }
     return false   
   }
+
+  delete(data, node = this.root) {
+    if (node !== null) {
+      if (node.data === data) {
+        node.data = null
+        return
+      } else {
+        this.delete(data, node.right)
+        this.delete(data, node.left)
+      }
+    }
+  }
+
+  preOrder(callback, node = this.root) {
+    if (node !== null) {
+      callback()
+      this.preOrder(node.left)
+      this.preOrder(node.right)
+    }
+  }
 }
 
 module.exports = BinarySearchTree

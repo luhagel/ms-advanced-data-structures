@@ -65,4 +65,16 @@ describe('Binary Search Tree', () => {
 
     expect(tree.search(8)).toBe(false)
   })
+
+  it('deletes an element', () => {
+    var tree = new BinaryTree(5)
+    tree.insert(4)
+    tree.insert(1)
+    tree.insert(3)
+
+    expect(tree.search(3)).toBe(true)
+
+    tree.delete(3)
+    expect(tree.search(3)).toBe(false)
+  })
 })
