@@ -57,9 +57,25 @@ class BinarySearchTree {
 
   preOrder(callback, node = this.root) {
     if (node !== null) {
-      callback()
+      callback(node.data)
       this.preOrder(node.left)
       this.preOrder(node.right)
+    }
+  }
+
+  inOrder(callback, node = this.root) {
+    if (node !== null) {
+      this.preOrder(node.left)
+      callback(node.data)
+      this.preOrder(node.right)
+    }
+  }
+
+  postOrder(callback, node = this.root) {
+    if (node !== null) {
+      this.preOrder(node.left)
+      this.preOrder(node.right)
+      callback(node.data)
     }
   }
 }
