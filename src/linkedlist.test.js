@@ -35,4 +35,12 @@ describe('Linked List', () => {
     testList.delete(1)
     expect(testList.length).toEqual(1)
   })
+
+  it('returns value at index', () => {
+    var testList = new LinkedList([1, 2, 3, 4, 5])
+
+    expect(testList.getAtIndex(0)).toEqual(1)
+    expect(testList.getAtIndex(2)).toEqual(3)
+    expect(testList.getAtIndex(4)).toEqual(5)
+  })
 })

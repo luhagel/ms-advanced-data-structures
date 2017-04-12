@@ -56,6 +56,10 @@ class LinkedList {
     this.length += 1
   }
 
+  insertAtIndex(index) {
+    
+  }
+
   find(value) {
     var current = this.head
     while (current !== null) {
@@ -66,6 +70,18 @@ class LinkedList {
     }
 
     return false
+  }
+
+  getAtIndex(index) {
+    var current = this.head
+    var currentIndex = 0
+    while (current !== null && currentIndex <= index) {
+      if (currentIndex === index) {
+        return current.data
+      }
+      current = current.next
+      currentIndex += 1
+    }
   }
 
   delete(value) {
