@@ -56,8 +56,26 @@ class LinkedList {
     this.length += 1
   }
 
-  insertAtIndex(index) {
-    
+  insertAtIndex(index, data) {
+    if (index >= this.length || index < 0) {
+      this.append(data)
+    } else {
+      var newNode = new Node(data)
+
+      if (index === 0) {
+        newNode.next = this.head
+        this.head = newNode
+      } else {
+        var current = this.head
+        var currentIndex = 0
+        while (currentIndex < (index - 1)) {
+          current = current.next
+          currentIndex += 1
+        }
+        newNode.next = current.next
+        current.next = newNode
+      }
+    }
   }
 
   find(value) {

@@ -43,4 +43,13 @@ describe('Linked List', () => {
     expect(testList.getAtIndex(2)).toEqual(3)
     expect(testList.getAtIndex(4)).toEqual(5)
   })
+
+  it('inserts value at index', () => {
+    var testList = new LinkedList([1, 2, 3])
+
+    testList.insertAtIndex(0, 7)
+    expect(testList.getAtIndex(0)).toEqual(7)
+    testList.insertAtIndex(2, 8)
+    expect(testList.getAtIndex(2)).toEqual(8)
+  })
 })
