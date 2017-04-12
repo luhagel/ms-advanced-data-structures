@@ -21,9 +21,9 @@ class LinkedList {
   items() {
     var items = []
 
-    current = this.head
+    var current = this.head
     while(current !== null) {
-      items.append(current.data)
+      items.push(current.data)
       current = current.next
     }
 
@@ -42,15 +42,22 @@ class LinkedList {
       this.tail.next = newNode
     }
     this.tail = newNode
-    this.size += 1
+    this.length += 1
   }
 
   prepend(data) {
-
+    var newNode = new Node(data)
+    if (this.tail === null) {
+      this.tail = newNode
+    } else {
+      newNode.next = this.head
+    }
+    this.head = newNode
+    this.length += 1
   }
 
   find(value) {
-    current = this.head
+    var current = this.head
     while (current !== null) {
       if (current.data === value) {
         return true
@@ -62,7 +69,24 @@ class LinkedList {
   }
 
   delete(value) {
-    
+    var current = this.head
+    var prev = null
+    while (current !== null) {
+      if (current.data === value) {
+        if (prev === null) {
+          this.head = current.next
+        } else if (current.next === null){
+          this.tail = current.prev
+          prev.next = null
+        } else {
+          prev.next = current.next
+        }
+        current.next = null
+        this.length -= 1
+      }
+      prev = current
+      current = current.next
+    }
   }
 }
 
