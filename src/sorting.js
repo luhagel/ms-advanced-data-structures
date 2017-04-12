@@ -1,35 +1,35 @@
 function bubbleSort(arr) {
-  var swapped = true;
-  var tmp;
+  var swapped = true
+  var tmp
   for (var j = 0; swapped; j++) {
-    swapped = false;
+    swapped = false
     for (var i = 0; i < arr.length - j; i++) {
       if (arr[i] > arr[i + 1]) {
-        tmp = arr[i];
-        arr[i] = arr[i + 1];
-        arr[i + 1] = tmp;
-        swapped = true;
+        tmp = arr[i]
+        arr[i] = arr[i + 1]
+        arr[i + 1] = tmp
+        swapped = true
       }
     }
   }
-  return arr;
+  return arr
 }
 
 function selectionSort(arr) {
   for (var i = 0; i < arr.length; i++) {
-    var min = arr[i];
-    var swapIndex;
+    var min = arr[i]
+    var swapIndex = i
     for (var j = i; j < arr.length; j++) {
-      if (arr[j] < min) {
-        min = arr[j];
-        swapIndex = j;
+      if (arr[j] < arr[swapIndex]) {
+        min = arr[j]
+        swapIndex = j
       }
     }
-    var tmp = arr[i];
-    arr[i] = min;
-    arr[swapIndex] = tmp;
+    var tmp = arr[i]
+    arr[i] = arr[swapIndex]
+    arr[swapIndex] = tmp
   }
-  return arr;
+  return arr
 }
 
 function insertionSort(arr) {
