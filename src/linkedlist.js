@@ -18,6 +18,22 @@ class LinkedList {
     }
   }
 
+  items() {
+    var items = []
+
+    current = this.head
+    while(current !== null) {
+      items.append(current.data)
+      current = current.next
+    }
+
+    return items
+  }
+
+  isEmpty() {
+    return this.head === null
+  }
+
   append(data) {
     var newNode = new Node(data)
     if (this.head === null) {
@@ -27,6 +43,26 @@ class LinkedList {
     }
     this.tail = newNode
     this.size += 1
+  }
+
+  prepend(data) {
+
+  }
+
+  find(value) {
+    current = this.head
+    while (current !== null) {
+      if (current.data === value) {
+        return true
+      }
+      current = current.next
+    }
+
+    return false
+  }
+
+  delete(value) {
+    
   }
 }
 
